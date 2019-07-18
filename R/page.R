@@ -6,20 +6,20 @@
 #' @param ... The contents of the document body.
 #'
 #' @export
-foundationPage <- function(...) {
+fd_page <- function(...) {
   htmltools::attachDependencies(
     shiny::tagList(
       ...,
       tags$script("$(document).foundation()")
     ),
-    foundationLib()
+    fd_library()
   )
 }
 
 #' Library location for foundation framework
 #'
 #' @export
-foundationLib <- function() {
+fd_library <- function() {
   htmltools::htmlDependency(
     "foundation", "6.5.1",
     c(
