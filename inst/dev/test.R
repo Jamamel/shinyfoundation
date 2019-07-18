@@ -1,8 +1,8 @@
 #### Foundation ####
 library(shiny)
-library(shiny.foundation)
+library(shinyfoundation)
 
-testUI <- shiny.foundation::foundationPage(
+testUI <- shinyfoundation::foundationPage(
   tags$br(),
   fd_container(
     fd_grid(

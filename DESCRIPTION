@@ -1,4 +1,4 @@
-Package: shiny.foundation
+Package: shinyfoundation
 Type: Package
 Title: Foundation UI Framework for Shiny 
 Version: 0.1.0
@@ -7,8 +7,8 @@ Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 Imports: shiny, htmltools
 License: GPL-2
-URL: https://foundation.zurb.com, https://github.com/ashbaldry/shiny.foundation
-BugReports: https://github.com/ashbaldry/shiny.foundation/issues
+URL: https://foundation.zurb.com, https://github.com/ashbaldry/shinyfoundation
+BugReports: https://github.com/ashbaldry/shinyfoundation/issues
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
