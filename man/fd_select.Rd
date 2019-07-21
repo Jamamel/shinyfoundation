@@ -4,7 +4,7 @@
 \alias{fd_select}
 \title{Select Input for Foundation UI}
 \usage{
-fd_select(id, label, values, value_labels = values)
+fd_select(id, label, values, value_labels = values, multiple = FALSE)
 }
 \description{
 Select Input for Foundation UI
