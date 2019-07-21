@@ -35,7 +35,7 @@ fd_grid <- function(..., direction = "x", margin = "", padding = "",
     grid_class <- paste(grid_class, paste("grid-margin-", strsplit(margin, "")[[1]], collapse = " "))
   }
   if (padding != "") {
-    grid_class <- paste(grid_class, paste("grid-padding-", strsplit(padding, "")[[1]], collapse = " "))
+    grid_class <- paste(grid_class, paste0("grid-padding-", strsplit(padding, "")[[1]], collapse = " "))
   }
   if (!is.null(small_max) & direction == "x") grid_class <- paste0(grid_class, " small-up-", small_max)
   if (!is.null(medium_max) & direction == "x") grid_class <- paste0(grid_class, " medium-up-", medium_max)

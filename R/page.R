@@ -4,12 +4,16 @@
 #' Creates a Shiny UI page that load s the CSS and JavaScript for Foundation.
 #'
 #' @param ... The contents of the document body.
+#' @param header The contents of the document header
+#' @param footer The contents of the document footer
 #'
 #' @export
-fd_page <- function(...) {
+fd_page <- function(..., header = NULL, footer = NULL) {
   htmltools::attachDependencies(
     shiny::tagList(
+      if (!is.null(header)) tags$header(header),
       ...,
+      if (!is.null(footer)) tags$footer(footer),
       tags$script("$(document).foundation()")
     ),
     fd_library()
