@@ -4,10 +4,14 @@
 \alias{fd_page}
 \title{Basic Page for Foundation UI}
 \usage{
-fd_page(...)
+fd_page(..., header = NULL, footer = NULL)
 }
 \arguments{
 \item{...}{The contents of the document body.}
+
+\item{header}{The contents of the document header}
+
+\item{footer}{The contents of the document footer}
 }
 \description{
 Creates a Shiny UI page that load s the CSS and JavaScript for Foundation.

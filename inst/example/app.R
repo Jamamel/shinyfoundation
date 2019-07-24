@@ -7,32 +7,37 @@ ns <- NS("example")
 
 #### Form ####
 number_module_ui <- tagList(
-  h3("Numeric Input"),
+  h3("Numeric"),
   fd_grid(
     medium_max = 2,
     fd_cell(
-      fd_numeric(ns("number"), "Select a number", 10, 1, 50)
+      fd_numeric(ns("number"), "Select a number", 10, 1, 50),
+      "Selected Number:", textOutput(ns("number"), inline = TRUE)
     ),
     fd_cell(
       tags$pre(
-        tags$code(class = "html",
-        as.character(fd_numeric(ns("number"), "Select a number", 10, 1, 50))
-        )
+        "fd_numeric(ns(\"number\"), \"Select a number\", 10, 1, 50)"
       )
     )
   )
 )
 
 number_module <- function(input, output, session) {
-
+  output$number <- renderText(input$number)
 }
 
 #### UI ####
 ui <- shinyfoundation::fd_page(
   fd_container(
+    h1("Foundation UI for Shiny"),
+
+    h2("Typography"),
+
+    hr(),
+
+    h2("Inputs"),
     fd_grid(
-      margin = "x",
-      h1("Foundation UI for Shiny"),
+      direction = "y",
       number_module_ui
     )
   )

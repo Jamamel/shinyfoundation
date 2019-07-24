@@ -32,7 +32,7 @@ fd_grid <- function(..., direction = "x", margin = "", padding = "",
   # Setting up grid class
   grid_class <- paste0("grid-", direction)
   if (margin != "") {
-    grid_class <- paste(grid_class, paste("grid-margin-", strsplit(margin, "")[[1]], collapse = " "))
+    grid_class <- paste(grid_class, paste0("grid-margin-", strsplit(margin, "")[[1]], collapse = " "))
   }
   if (padding != "") {
     grid_class <- paste(grid_class, paste0("grid-padding-", strsplit(padding, "")[[1]], collapse = " "))
@@ -50,7 +50,7 @@ fd_grid <- function(..., direction = "x", margin = "", padding = "",
 #' @export
 fd_container <- function(..., fluid = FALSE, full = FALSE) {
   shiny::div(
-    class = paste("grid-container", if (fluid) "fluid", if (full) "full"),
+    class = paste0("grid-container", if (fluid) " fluid", if (full) " full"),
     ...
   )
 }
@@ -60,11 +60,11 @@ fd_cell <- function(..., small_n = NULL, medium_n = NULL, large_n = NULL) {
   # Setting up cell class
   cell_class <- "cell"
   if (!is.null(small_n)) cell_class <- paste0(cell_class, " small-", small_n)
-  if (!is.null(medium_n)) cell_class <- paste0(cell_class, " medium--", medium_n)
+  if (!is.null(medium_n)) cell_class <- paste0(cell_class, " medium-", medium_n)
   if (!is.null(large_n)) cell_class <- paste0(cell_class, " large-", large_n)
 
   shiny::div(
-    class = "cell",
+    class = cell_class,
     ...
   )
 }
