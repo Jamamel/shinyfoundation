@@ -33,5 +33,5 @@ fd_link_button(id, label, link, class = NULL, ...)
 \item{link}{The URL/path to direct the user to.}
 }
 \description{
-Button for Foundation UI
+Creates a button that either is a link or performs an action when clicked.
 }

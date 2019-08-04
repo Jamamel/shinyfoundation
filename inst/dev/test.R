@@ -2,7 +2,7 @@
 library(shiny)
 library(shinyfoundation)
 
-testUI <- shinyfoundation::foundationPage(
+testUI <- shinyfoundation::fd_page(
   tags$br(),
   fd_container(
     fd_grid(

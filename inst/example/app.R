@@ -26,6 +26,33 @@ number_module <- function(input, output, session) {
   output$number <- renderText(input$number)
 }
 
+#### Containers ####
+accordion_module_ui <- tagList(
+  h3("Accordion"),
+  fd_grid(
+    medium_max = 2,
+    fd_cell(
+      fd_accordion(
+        fd_accordion_item("Item 1", "This is an item", TRUE),
+        fd_accordion_item("Item 2", "This is an item too"),
+        fd_accordion_item("Item 3", fd_action_button(ns("accordion-button"), "You can add buttons too!"))
+      )
+    ),
+    fd_cell(
+      tags$pre(
+        "fd_accordion(
+  fd_accordion_item(\"Item 1\", \"This is an item\", TRUE),
+  fd_accordion_item(\"Item 2\", \"This is an item too\"),
+  fd_accordion_item(
+    \"Item 3\",
+    fd_action_button(ns(\"accordion-button\"), \"You can add buttons too!\")
+  )
+)"
+      )
+    )
+  )
+)
+
 #### UI ####
 ui <- shinyfoundation::fd_page(
   fd_container(
@@ -39,6 +66,14 @@ ui <- shinyfoundation::fd_page(
     fd_grid(
       direction = "y",
       number_module_ui
+    ),
+
+    hr(),
+
+    h2("Containers"),
+    fd_grid(
+      direction = "y",
+      accordion_module_ui
     )
   )
 )
