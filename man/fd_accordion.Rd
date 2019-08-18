@@ -3,9 +3,23 @@
 \name{fd_accordion}
 \alias{fd_accordion}
 \title{Accordion for Foundation UI}
+\source{
+\url{https://foundation.zurb.com/sites/docs/accordion.html}
+}
 \usage{
-fd_accordion(..., multi_expand = FALSE, all_closed = FALSE)
+fd_accordion(..., .items = NULL, multi_expand = FALSE,
+  all_closed = FALSE)
+}
+\arguments{
+\item{...}{Tags of class \code{accordion-item}. Generated from \code{\link{fd_accordion_item}}.}
+
+\item{.items}{A list of tags of class \code{accordion-item}. Generated from \code{\link{fd_accordion_item}}.}
+
+\item{multi_expand}{Logical, can more than one accordion item be expanded?}
+
+\item{all_closed}{Logical, should all items be closed on start-up?}
 }
 \description{
-Accordion for Foundation UI
+Creates an accordion that can contain accordion items that are individually able to be
+expanded and collapsed.
 }
