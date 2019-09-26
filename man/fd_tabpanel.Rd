@@ -4,7 +4,7 @@
 \alias{fd_tabpanel}
 \title{Tab Panel for Foundation UI}
 \usage{
-fd_tabpanel(id, tabs)
+fd_tabpanel(id, ..., tabs)
 }
 \description{
 Tab Panel for Foundation UI

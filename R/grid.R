@@ -6,13 +6,13 @@
 #' @param ... Elements to include within the grid
 #' @param direction Which direction should the elements go, can either be \code{x} or \code{y}
 #' @param margin,padding Which direction
-#' @param small_max,medium_max,large_max Only works when working with columns. The number of cells in each column.
+#' @param n_cells Only works when working with columns. The number of cells in each column.
 #' The default will be that a cell takes up the full width.
 #'
 #' @examples
 #' fd_container(
 #'   fd_grid(
-#'     large_max = 3,
+#'     n_cells = 3,
 #'     fd_cell("Cell 1"),
 #'     fd_cell("Cell 2"),
 #'     fd_cell("Cell 3")
@@ -22,8 +22,7 @@
 #' @source \url{https://foundation.zurb.com/sites/docs/xy-grid.html}
 #'
 #' @export
-fd_grid <- function(..., direction = "x", margin = "", padding = "",
-                    small_max = NULL, medium_max = NULL, large_max = NULL) {
+fd_grid <- function(..., direction = "x", margin = "", padding = "", n_cells = NULL) {
   # Checking have used x/y
   # direction <- match.arg(direction, c("x", "y"))
   # margin <- match.arg(margin, c("", "x", "y", "xy", "yx"))
@@ -37,9 +36,7 @@ fd_grid <- function(..., direction = "x", margin = "", padding = "",
   if (padding != "") {
     grid_class <- paste(grid_class, paste0("grid-padding-", strsplit(padding, "")[[1]], collapse = " "))
   }
-  if (!is.null(small_max) & direction == "x") grid_class <- paste0(grid_class, " small-up-", small_max)
-  if (!is.null(medium_max) & direction == "x") grid_class <- paste0(grid_class, " medium-up-", medium_max)
-  if (!is.null(large_max) & direction == "x") grid_class <- paste0(grid_class, " large-up-", large_max)
+  if (!is.null(n_cells) & direction == "x") grid_class <- paste0(grid_class, " small-up-", n_cells)
 
   shiny::div(
     class = grid_class,
@@ -56,12 +53,10 @@ fd_container <- function(..., fluid = FALSE, full = FALSE) {
 }
 
 #' @export
-fd_cell <- function(..., small_n = NULL, medium_n = NULL, large_n = NULL) {
+fd_cell <- function(..., width = NA) {
   # Setting up cell class
   cell_class <- "cell"
-  if (!is.null(small_n)) cell_class <- paste0(cell_class, " small-", small_n)
-  if (!is.null(medium_n)) cell_class <- paste0(cell_class, " medium-", medium_n)
-  if (!is.null(large_n)) cell_class <- paste0(cell_class, " large-", large_n)
+  if (!is.na(width)) cell_class <- paste0(cell_class, " small-", width)
 
   shiny::div(
     class = cell_class,

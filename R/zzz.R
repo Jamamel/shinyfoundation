@@ -13,5 +13,11 @@
 #' @export
 run_fd_example <- function() {
   example_dir <- system.file("example", package = "shinyfoundation")
-  runApp(example_dir)
+  shiny::runApp(example_dir)
 }
+
+
+#' @importFrom shiny tags tagList
+#'
+#' @docType package
+NULL

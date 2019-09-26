@@ -8,7 +8,7 @@
 }
 \usage{
 fd_grid(..., direction = "x", margin = "", padding = "",
-  small_max = NULL, medium_max = NULL, large_max = NULL)
+  n_cells = NULL)
 }
 \arguments{
 \item{...}{Elements to include within the grid}
@@ -17,7 +17,7 @@ fd_grid(..., direction = "x", margin = "", padding = "",
 
 \item{margin, padding}{Which direction}
 
-\item{small_max, medium_max, large_max}{Only works when working with columns. The number of cells in each column.
+\item{n_cells}{Only works when working with columns. The number of cells in each column.
 The default will be that a cell takes up the full width.}
 }
 \description{
@@ -26,7 +26,7 @@ The UI grid is based off Foundation's XY-Grid. This allows the grid to either be
 \examples{
 fd_container(
   fd_grid(
-    large_max = 3,
+    n_cells = 3,
     fd_cell("Cell 1"),
     fd_cell("Cell 2"),
     fd_cell("Cell 3")

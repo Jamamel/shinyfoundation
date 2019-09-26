@@ -36,6 +36,19 @@ fd_text <- function(id, label, value = "", placeholder = NULL) {
   )
 }
 
+#' Password Input for Foundation UI
+#'
+#' @export
+fd_password <- function(id, label, value = "", placeholder = NULL) {
+  tags$label(
+    class = "shiny-input-container",
+    label,
+    tags$input(
+      type = "password", id = id, value = value, placeholder = placeholder
+    )
+  )
+}
+
 #' Select Input for Foundation UI
 #'
 #' @export

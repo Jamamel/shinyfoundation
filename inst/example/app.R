@@ -9,7 +9,7 @@ ns <- NS("example")
 number_module_ui <- tagList(
   h3("Numeric"),
   fd_grid(
-    medium_max = 2,
+    n_cells = 2,
     fd_cell(
       fd_numeric(ns("number"), "Select a number", 10, 1, 50),
       "Selected Number:", textOutput(ns("number"), inline = TRUE)
@@ -30,7 +30,7 @@ number_module <- function(input, output, session) {
 accordion_module_ui <- tagList(
   h3("Accordion"),
   fd_grid(
-    medium_max = 2,
+    n_cells = 2,
     fd_cell(
       fd_accordion(
         fd_accordion_item("Item 1", "This is an item", TRUE),

@@ -7,13 +7,13 @@
 \url{https://foundation.zurb.com/sites/docs/accordion.html}
 }
 \usage{
-fd_accordion(..., .items = NULL, multi_expand = FALSE,
+fd_accordion(..., items = NULL, multi_expand = FALSE,
   all_closed = FALSE)
 }
 \arguments{
 \item{...}{Tags of class \code{accordion-item}. Generated from \code{\link{fd_accordion_item}}.}
 
-\item{.items}{A list of tags of class \code{accordion-item}. Generated from \code{\link{fd_accordion_item}}.}
+\item{items}{A list of tags of class \code{accordion-item}. Generated from \code{\link{fd_accordion_item}}.}
 
 \item{multi_expand}{Logical, can more than one accordion item be expanded?}
 

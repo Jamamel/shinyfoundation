@@ -1,8 +1,8 @@
 #' Tab Panel for Foundation UI
 #'
 #' @export
-fd_tabpanel <- function(id, ..., .tabs) {
-  tab_items <- if (!is.null(.tabs)) .tabs else as.list(...)
+fd_tabpanel <- function(id, ..., tabs) {
+  tab_items <- if (!is.null(tabs)) tabs else as.list(...)
 
   # Check if more than one tab is active
 

@@ -5,15 +5,15 @@
 #' expanded and collapsed.
 #'
 #' @param ... Tags of class \code{accordion-item}. Generated from \code{\link{fd_accordion_item}}.
-#' @param .items A list of tags of class \code{accordion-item}. Generated from \code{\link{fd_accordion_item}}.
+#' @param items A list of tags of class \code{accordion-item}. Generated from \code{\link{fd_accordion_item}}.
 #' @param multi_expand Logical, can more than one accordion item be expanded?
 #' @param all_closed Logical, should all items be closed on start-up?
 #'
 #' @source \url{https://foundation.zurb.com/sites/docs/accordion.html}
 #'
 #' @export
-fd_accordion <- function(..., .items = NULL, multi_expand = FALSE, all_closed = FALSE) {
-  accordion_items <- if (!is.null(.items)) .items else as.list(...)
+fd_accordion <- function(..., items = NULL, multi_expand = FALSE, all_closed = FALSE) {
+  accordion_items <- if (!is.null(items)) items else list(...)
 
   tags$ul(
     class = "accordion",
@@ -22,7 +22,8 @@ fd_accordion <- function(..., .items = NULL, multi_expand = FALSE, all_closed = 
     `data-allow-all-closed` = if (all_closed) "true" else NULL,
     accordion_items
   )
-}
+
+  }
 
 #' Accordion Item for Foundation UI
 #'
