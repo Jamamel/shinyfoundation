@@ -1,6 +1,6 @@
 # shinyfoundation - Foundation UI for shiny
 
-Check (https://foundation.zurb.com)[https://foundation.zurb.com] for the Foundation framework.
+Check [https://foundation.zurb.com](https://foundation.zurb.com) for the Foundation framework.
 
 ## Installation
 
