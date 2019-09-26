@@ -1,0 +1,1 @@
+- Shiny Bootstrap framework column only use small, no need in `fd_grid` to set small, medium and large.
