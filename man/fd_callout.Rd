@@ -6,6 +6,17 @@
 \usage{
 fd_callout(..., class = "", closable = FALSE)
 }
+\arguments{
+\item{...}{tags of the contents of the callout.}
+
+\item{class}{Option to add the type of}
+}
 \description{
-Callout for Foundation UI
+A
+}
+\examples{
+fd_callout(
+  tags$p("This is an example callout")
+)
+
 }

@@ -25,26 +25,51 @@ fd_numeric <- function(id, label, value, min = NULL, max = NULL, step = NULL) {
 
 #' Text Input for Foundation UI
 #'
+#' @details
+#' The types available:
+#' \itemize{
+#' \item{text}
+#' \item{date}
+#' \item{datetime}
+#' \item{datetime-local}
+#' \item{email}
+#' \item{month}
+#' \item{number}
+#' \item{password}
+#' \item{search}
+#' \item{tel}
+#' \item{time}
+#' \item{url}
+#' \item{week}
+#' }
+#'
 #' @export
-fd_text <- function(id, label, value = "", placeholder = NULL) {
+fd_text <- function(id, label, value = "", placeholder = NULL, type = "text") {
+  if (!type %in% fd_text_types) stop(type, " is not a valid text input type.")
+
   tags$label(
     class = "shiny-input-container",
     label,
     tags$input(
-      type = "text", id = id, value = value, placeholder = placeholder
+      type = type, id = id, value = value, placeholder = placeholder
     )
   )
 }
 
-#' Password Input for Foundation UI
+fd_text_types <- c(
+  "text", "date", "datetime", "datetime-local", "email", "month",
+  "number", "password", "search", "tel", "time", "url", "week"
+)
+
+#' Text Area Input for Foundation UI
 #'
 #' @export
-fd_password <- function(id, label, value = "", placeholder = NULL) {
+fd_textarea <- function(id, label, value = "", placeholder = NULL) {
   tags$label(
     class = "shiny-input-container",
     label,
-    tags$input(
-      type = "password", id = id, value = value, placeholder = placeholder
+    tags$textarea(
+      type = "text", id = id, value = value, placeholder = placeholder
     )
   )
 }
@@ -107,7 +132,7 @@ fd_slider <- function(id, label, value, min, max, step = NULL) {
         tags$span(class = "slider-fill", `data-slider-fill` = NA)
       )
     ),
-    div(
+    tags$div(
       class = "cell small-2 shiny-input-container",
       tags$input(
         id = id, type = "number", value = value,
@@ -115,4 +140,15 @@ fd_slider <- function(id, label, value, min, max, step = NULL) {
       )
     )
   )
+}
+
+#' Help Text for Foundation Inputs
+#'
+#' @description
+#' A piece of text that can be placed underneath an input that can be used
+#' to describe what is required for the input.
+#'
+#' @export
+fd_helptext <- function(...) {
+  tags$div(class = "help-text", ...)
 }

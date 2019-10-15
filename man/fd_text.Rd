@@ -4,8 +4,26 @@
 \alias{fd_text}
 \title{Text Input for Foundation UI}
 \usage{
-fd_text(id, label, value = "", placeholder = NULL)
+fd_text(id, label, value = "", placeholder = NULL, type = "text")
 }
 \description{
 Text Input for Foundation UI
+}
+\details{
+The types available:
+\itemize{
+\item{text}
+\item{date}
+\item{datetime}
+\item{datetime-local}
+\item{email}
+\item{month}
+\item{number}
+\item{password}
+\item{search}
+\item{tel}
+\item{time}
+\item{url}
+\item{week}
+}
 }
